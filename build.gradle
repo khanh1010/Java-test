@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.0.0'
+}
+
+//group 'Convert'
+//version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+compileJava.options.encoding = 'UTF-8'
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+}
+dependencies {
+// https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.0.0'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.0.0'
+    implementation group: 'com.opencsv', name: 'opencsv', version: '3.7'
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.8'
+}
+
+test {
+    useJUnitPlatform()
+}
